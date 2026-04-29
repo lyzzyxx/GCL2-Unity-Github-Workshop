@@ -7,7 +7,7 @@ public class SpikedTrapElizabeth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameManager = gameObject.GetComponent<GameManager>();
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     // Update is called once per frame
