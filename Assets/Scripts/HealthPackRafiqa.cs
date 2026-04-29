@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class ButtonEnxuScript : MonoBehaviour
+public class HealthPackRafiqa : MonoBehaviour
 {
+
+    public GameManager gameManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     // Update is called once per frame
@@ -16,9 +19,10 @@ public class ButtonEnxuScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
-            Debug.Log("Yes, you've stepped on a button... or is it a landmine?");
+           gameManager.Heal();
+           Debug.Log("You found a heart pack! You regained 1 heart.");
         }
     }
 }

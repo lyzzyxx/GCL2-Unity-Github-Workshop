@@ -25,12 +25,21 @@ public class GameManager : MonoBehaviour
 
     public void LoseLife()
     {
-        lives--;
-        Debug.Log("Lives left: " + lives);
+        if (lives >= 1)
+        {
+            lives--;
+            Debug.Log("Lives left: " + lives);
+        }
 
         if (lives <= 0)
         {
-            Debug.Log("Game Over!");
+            Debug.Log("You have 0 lives left. Game Over!");
         }
+    }
+
+    public void Heal()
+    {
+        lives++;
+        Debug.Log("Lives left: " + lives);
     }
 }
