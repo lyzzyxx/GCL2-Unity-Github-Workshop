@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int points)
     {
-        startingScore += points;
+        startingScore = 999;
         Debug.Log("Score: " + startingScore);
     }
 
